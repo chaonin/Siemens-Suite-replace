@@ -8,7 +8,7 @@ We can no longer recreate this fault's failing behavior on modern systems,
 where it appears that no tests now reveal this fault.
 Jan 6, 2015 - wdm
 
-add following scripts by chaoinin @Feb 17, 2020
+add following scripts by chaonin @Feb 17, 2020
 1. genScr.lua - for generating running scripts for all versions of replace.c
 2. versions.alt/versions.orig/genTraceD.py - for trace directory of dot and txt of pvtrace
 3. newoutputs/genNewOutpusDir - for generating versions directory of outputs
