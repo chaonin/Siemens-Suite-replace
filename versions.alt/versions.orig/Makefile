@@ -32,3 +32,37 @@ all:
 	gcc -fprofile-arcs -ftest-coverage -g -finstrument-functions v30/replace.c v30/instrument.c -o v30/replace.exe
 	gcc -fprofile-arcs -ftest-coverage -g -finstrument-functions v31/replace.c v31/instrument.c -o v31/replace.exe
 	gcc -fprofile-arcs -ftest-coverage -g -finstrument-functions v32/replace.c v32/instrument.c -o v32/replace.exe
+
+clean:
+	rm v1/replace.exe
+	rm v2/replace.exe
+	rm v3/replace.exe
+	rm v4/replace.exe
+	rm v5/replace.exe
+	rm v6/replace.exe
+	rm v7/replace.exe
+	rm v8/replace.exe
+	rm v9/replace.exe
+	rm v10/replace.exe
+	rm v11/replace.exe
+	rm v12/replace.exe
+	rm v13/replace.exe
+	rm v14/replace.exe
+	rm v15/replace.exe
+	rm v16/replace.exe
+	rm v17/replace.exe
+	rm v18/replace.exe
+	rm v19/replace.exe
+	rm v20/replace.exe
+	rm v21/replace.exe
+	rm v22/replace.exe
+	rm v23/replace.exe
+	rm v24/replace.exe
+	rm v25/replace.exe
+	rm v26/replace.exe
+	rm v27/replace.exe
+	rm v28/replace.exe
+	rm v29/replace.exe
+	rm v30/replace.exe
+	rm v31/replace.exe
+	rm v32/replace.exe
