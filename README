@@ -8,7 +8,6 @@ We can no longer recreate this fault's failing behavior on modern systems,
 where it appears that no tests now reveal this fault.
 Jan 6, 2015 - wdm
 
-
 ******
 add following scripts by chaonin @Feb 17, 2020
 1. genScr.lua - for generating running scripts for all versions of replace.c
@@ -23,7 +22,6 @@ add following scripts by chaonin @Feb 17, 2020
   3)将所有的 getline 替换为 get_line
 6. add instrument.c to versions.alt/versions.orig/vX(all 32 versions of repace.c) for pvtrace
 7. add setup.sh for preparing runtine of running test 
-
 
 How to run:
 1. sh setup.sh
