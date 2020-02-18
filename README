@@ -14,17 +14,16 @@ add following scripts by chaonin @Feb 17, 2020
 2. genScr4Orig.lua - generate new running script for orig ver of replace
 3. versions.alt/versions.orig/genTraceD.py - for trace directory of dot and txt of pvtrace
 4. newoutputs/genNewOutpusDir - for generating versions directory of output
-5. versions.alt/versions.orig/Makefile - Makefile for all updated replace.c and added instrument.c
-6. source.alt/source.orig/Makefile - Makefile for original version
-7. all versions of replace.c (because of old version of C/gcc not fit new version of C/gcc now):
+5. source.alt/source.orig/Makefile - Makefile for original version
+6. all versions of replace.c (because of old version of C/gcc not fit new version of C/gcc now):
   1)在# include <stdio.h>下插入两行
       # include <ctype.h>
       # include <stdlib.h>
   2)修改 # define NULL 0 为 # define NUL 0 ( NULL 为关键字）
   3)将所有的 getline 替换为 get_line
-8. add instrument.c to versions.alt/versions.orig/vX(all 32 versions of repace.c) for pvtrace
-9. add genSpectDir.py for dirs of spectrum
-10. add setup.sh for preparing runtine of running test 
+7. add instrument.c to versions.alt/versions.orig/vX(all 32 versions of repace.c) for pvtrace
+8. add genSpectDir.py for dirs of spectrum
+9. add setup.sh for preparing runtine of running test 
 
 How to run:
 1. sh setup.sh

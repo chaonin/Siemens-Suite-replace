@@ -10,6 +10,7 @@ j = 0
 k = 0
 line_num = 0
 tmp = ""
+tmp2 = ""
 
 
 --READ ORIG SCRIPTS--
@@ -28,12 +29,22 @@ k = 1
 	for j = 1, line_num do
 		tmp = buff[j]
 		if string.find(tmp, "/source.alt/source.orig/") ~=nil then
+
+			tmp2 = ""
+			tmp2 = "cd ../versions.alt/versions.orig/v"..i
+			tmp2 = tmp2.."\ngcc -fprofile-arcs -ftest-coverage -g -finstrument-functions replace.c instrument.c -o replace.exe" 
+			tmp2 = tmp2.."\ncd ../../../scripts\n"
+
 			tmp = string.gsub(tmp,"/source.alt/source.orig/", "/versions.alt/versions.orig/v"..i.."/") --modefy paths--
 			tmp = string.gsub(tmp,"/outputs/", "/newoutputs/v"..i.."/")
 			tmp = tmp.."\nmv trace.txt  ../versions.alt/versions.orig/v"..i
-			tmp = tmp.."\ncd ../versions.alt/versions.orig/v"..i.." && pvtrace replace.exe"
+			tmp = tmp.."\ncd ../versions.alt/versions.orig/v"..i.." && pvtrace replace.exe && gcov replace.c"
 			tmp = tmp.."\nmv trace.txt ./tra"..k.. " && mv graph.dot ./tra"..k
+			tmp = tmp.."\nmv replace.c.gcov ../../../spectrum/V"..i.."/t"..k
 			tmp = tmp.."\ncd ../../../scripts"	
+
+			tmp = tmp2..tmp
+
 			k = k + 1
 		end
 		file:write(tmp.."\n")
