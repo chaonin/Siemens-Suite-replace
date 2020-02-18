@@ -1,3 +1,3 @@
 all:
-	gcc -g -finstrument-functions replace.c instrument.c -o replace.exe
+	gcc -fprofile-arcs -ftest-coverage -g -finstrument-functions replace.c instrument.c -o replace.exe
 
