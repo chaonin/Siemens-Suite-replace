@@ -18,7 +18,9 @@ os.mkdir(new_dir)
 for index1 in range(5543):
 	if index1 > 0:
 		os.mkdir(dir + '/spectrum/Vo/t' + str(index1))
-for index1 in range(1, 33):
+# only do version 1 now, too large, chaonin 02.18.2020
+#for index1 in range(1, 33):
+for index1 in range(1, 2):
 	if index1 > 0:
 		new_dir = dir + '/spectrum/V'+ str(index1)
 		os.mkdir(new_dir)
