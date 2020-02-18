@@ -6,8 +6,7 @@ VERSION_NUM = 32
 --VARS--
 buff = {}
 i = 0
-j = 0
-k = 0
+j = 1
 line_num = 0
 tmp = ""
 
@@ -27,8 +26,10 @@ for i = 1, line_num do
 	tmp = buff[i]
 	if string.find(tmp, "/source.alt/source.orig/") ~=nil then
 		tmp = tmp.."\ncd ../source.alt/source.orig/ && gcov replace.c "
+		tmp = tmp.."\nmv ./replace.c.gcov ../../spectrum/Vo/t"..j.."/"
 		tmp = tmp.."\nmake"	
 		tmp = tmp.."\ncd ../../scripts"	
+		j = j + 1
 	end
 	file:write(tmp.."\n")
 	tmp = ""
