@@ -5,7 +5,7 @@
 import os
 import shutil
 dir = os.getcwd()
-# for test, only generate for version 1, two large for all testing, 02.18.2020
+# for test, only generate for version 1, too large for all testing, 02.18.2020
 #for index1 in range(1, 33):
 for index1 in range(1, 2):
 	if index1 > 0:
