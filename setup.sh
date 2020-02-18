@@ -1,4 +1,5 @@
 lua ./genScr.lua
+lua ./genScr4Orig.lua
 cd newoutputs && python genNewOutputsDir.py
 cd ../versions.alt/versions.orig/ && python genTraceD.py
 make # for all versions' make
