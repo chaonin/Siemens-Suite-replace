@@ -10,7 +10,7 @@ Jan 6, 2015 - wdm
 
 ******
 add following scripts by chaonin @Feb 17, 2020
-1. genScr.lua - for generating running scripts for all versions of replace.c
+1. genScr4AllV.lua - for generating running scripts for all versions of replace.c
 2. genScr4Orig.lua - generate new running script for orig ver of replace
 3. versions.alt/versions.orig/genTraceD.py - for trace directory of dot and txt of pvtrace
 4. newoutputs/genNewOutpusDir - for generating versions directory of output
