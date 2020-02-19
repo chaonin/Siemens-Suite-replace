@@ -1,4 +1,4 @@
-lua ./genScr.lua
+lua ./genScr4AllV.lua
 lua ./genScr4Orig.lua
 python genSpectDir.py
 cd newoutputs && python genNewOutputsDir.py
