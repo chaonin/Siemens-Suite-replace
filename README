@@ -24,7 +24,9 @@ add following scripts by chaonin @Feb 17, 2020
 7. add instrument.c to versions.alt/versions.orig/vX(all 32 versions of repace.c) for pvtrace
 8. add genSpectDir.py for dirs of spectrum
 9. add finalresults/xx  dir and final results of all testing
-10. add setup.sh for preparing runtine of running test 
+10. add diff.sh for gether the results' diff of orig and all versions
+11. add scripts/run.sh for running of all versions
+12. add setup.sh for preparing runtine of running test 
 
 How to run:
 1. sh setup.sh
