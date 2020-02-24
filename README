@@ -27,8 +27,9 @@ add following scripts by chaonin @Feb 17, 2020
 10. add diff.sh for gether the results' diff of orig and all versions
 11. add scripts/run.sh for running of all versions
 12. add setup.sh for preparing runtine of running test 
-13. add papers - related papers
-14. spectrum-vo-v1-15.tar.gz spectrum results part I
+13. bugplaceofallv.txt - the bug line of all versions
+14. add papers - related papers
+15. spectrum-vo-v1-15.tar.gz spectrum results part I
     spectrum-v16-32.tar.gz   spectrum results part II
 
 How to run:
