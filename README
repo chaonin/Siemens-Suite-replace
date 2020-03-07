@@ -31,6 +31,7 @@ add following scripts by chaonin @Feb 17, 2020
 14. add papers - related papers
 15. spectrum-vo-v1-15.tar.gz spectrum results part I
     spectrum-v16-32.tar.gz   spectrum results part II
+16. add dir handleresult and handleresult/process.py to handle the metrics for all method:Jaccard, Ochiai,...
 
 How to run:
 1. sh setup.sh
