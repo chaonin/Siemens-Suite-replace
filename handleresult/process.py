@@ -29,6 +29,7 @@ SUSLINE_D2 = [0]*VER		# the suspecious line for bug of D2
 SUSLINE_D3 = [0]*VER		# the suspecious line for bug of D3 
 SUSLINE_EP2 = [0]*VER		# the suspecious line for bug of EP2
 SUSLINE_EP3 = [0]*VER		# the suspecious line for bug of EP3 
+SUSLINE_LOG = [0]*VER		# the suspecious line for bug of LOG
 
 SPECTMATRIX = []
 for i in range(LINE):
@@ -100,7 +101,7 @@ for v in range(1,VER+1):
 	print time, "ep ef np nf processing ok for v%d" % v
 	
 	############################ begin of different metrics #############################
-	print "              EP    EF   NP    NF Jaccard Ochiai Tarantula   D1   D2   D3    EP2    EP3"
+	print "              EP    EF   NP    NF Jaccard Ochiai Tarantula   D1   D2   D3    EP2    EP3   LOG"
 	susmax_J = 0
 	susmax_O = 0
 	susmax_T = 0
@@ -109,6 +110,7 @@ for v in range(1,VER+1):
 	susmax_D3 = 0
 	susmax_EP2 = 0
 	susmax_EP3 = 0
+	susmax_LOG = 0 
 	for line in range(0, ACTUALLINE[v-1]):
 		if (SPECTMATRIX[line][0] == -1): # any test for this code line is not been executable(here we use version 1), such as definition line
 			continue					 # need not metric for this line
@@ -124,6 +126,11 @@ for v in range(1,VER+1):
 		D3 = 3*float(ef[v-1][line])/(nf[v-1][line] + ep[v-1][line])
 		EP2 = float(ef[v-1][line])/(nf[v-1][line] + pow(ep[v-1][line], 1/2.0))
 		EP3 = float(ef[v-1][line])/(nf[v-1][line] + pow(ep[v-1][line], 1/3.0))
+		if (ep[v-1][line] == 0):
+			LOG = float(ef[v-1][line])/(nf[v-1][line] + math.log(1))
+		else:
+			LOG = float(ef[v-1][line])/(nf[v-1][line] + math.log(ep[v-1][line]))
+
 		if (Jaccard > susmax_J):
 			susmax_J = Jaccard
 			SUSLINE_J[v-1] = line + 1
@@ -148,7 +155,10 @@ for v in range(1,VER+1):
 		if (EP3 > susmax_EP3):
 			susmax_EP3 = EP3
 			SUSLINE_EP3[v-1] = line + 1
-		print 'line %3d: %5d %5d %5d %5d  %.3f  %.3f  %.7f %.3f %.3f %.3f %.3f %.3f' % (line+1, ep[v-1][line], ef[v-1][line], np[v-1][line], nf[v-1][line], Jaccard, Ochiai, Tarantula, D1, D2, D3, EP2, EP3)
+		if (LOG > susmax_LOG):
+			susmax_LOG = LOG 
+			SUSLINE_LOG[v-1] = line + 1
+		print 'line %3d: %5d %5d %5d %5d  %.3f  %.3f  %.7f %.3f %.3f %.3f %.3f %.3f %.3f' % (line+1, ep[v-1][line], ef[v-1][line], np[v-1][line], nf[v-1][line], Jaccard, Ochiai, Tarantula, D1, D2, D3, EP2, EP3, LOG)
 
 	time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 	print time, "metrics processing ok for v%d" % v
@@ -158,4 +168,4 @@ for v in range(1,VER+1):
 #end for v
 
 for v in range(1,VER+1):
-	print "v%2d: %4d %4d %4d %4d %4d %4d %4d %4d" % (v, SUSLINE_J[v-1], SUSLINE_O[v-1], SUSLINE_T[v-1], SUSLINE_D1[v-1], SUSLINE_D2[v-1], SUSLINE_D3[v-1], SUSLINE_EP2[v-1], SUSLINE_EP3[v-1])
+	print "v%2d: %4d %4d %4d %4d %4d %4d %4d %4d %4d" % (v, SUSLINE_J[v-1], SUSLINE_O[v-1], SUSLINE_T[v-1], SUSLINE_D1[v-1], SUSLINE_D2[v-1], SUSLINE_D3[v-1], SUSLINE_EP2[v-1], SUSLINE_EP3[v-1],SUSLINE_LOG[v-1])
