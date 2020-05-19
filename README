@@ -37,3 +37,6 @@ How to run:
 1. sh setup.sh
 2. sh scripts/runall.sh  # run all 5542 test case for original version
 3. sh scripts/run_vX.sh  # X = 1, 2, 3...32 run version X of replace.c
+
+
+2020.05.19 done for all work!
